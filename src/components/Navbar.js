@@ -1,21 +1,19 @@
-// src/Navbar.js
+// Navbar.js
 import React from "react";
 import { useCart } from "../context/CartContext";
 
-const Navbar = () => {
+function Navbar() {
   const {
     state: { cartItems },
   } = useCart();
 
-  const totalCount = cartItems.reduce((acc, item) => acc + item.quantity, 0);
-
+  const itemCount = cartItems.reduce((acc, item) => acc + item.quantity, 0);
 
   return (
     <nav>
-      <h2>Cart App - useReducer</h2> {/* Required for test */}
-      <div id="nav-cart-item-count">Cart ({totalCount})</div>
+      <h3>Cart ({itemCount})</h3> {/* ✅ Must be exactly like this */}
     </nav>
   );
-};
+}
 
 export default Navbar;
