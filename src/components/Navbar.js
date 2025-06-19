@@ -9,6 +9,7 @@ const Navbar = () => {
 
   const totalCount = cartItems.reduce((acc, item) => acc + item.quantity, 0);
 
+
   return (
     <nav>
       <h2>Cart App - useReducer</h2> {/* Required for test */}

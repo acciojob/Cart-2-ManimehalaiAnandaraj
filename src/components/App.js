@@ -25,9 +25,10 @@ function AppWithContext() {
   const { dispatch } = useCart();
 
   useEffect(() => {
-    dispatch({ type: "ADD_ITEM", payload: { id: 1, name: "Apple", price: 2.5 } });
-    dispatch({ type: "ADD_ITEM", payload: { id: 2, name: "Banana", price: 1.5 } });
-  }, [dispatch]);
+  dispatch({ type: "ADD_ITEM", payload: { id: 1, name: "Apple", price: 1.5 } });
+  dispatch({ type: "ADD_ITEM", payload: { id: 2, name: "Banana", price: 1.2 } });
+}, []);
+
 
   return (
     <div id="main">

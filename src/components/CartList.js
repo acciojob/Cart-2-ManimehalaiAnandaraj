@@ -14,7 +14,12 @@ const CartList = () => {
     0
   );
 
-  if (cartItems.length === 0) return <h2>Cart is currently empty</h2>;
+ {cartItems.length === 0 ? (
+  <h2>Cart is currently empty</h2> // ✅ Good for empty state
+) : (
+  <div id="cart-items-list"> ... </div>
+)}
+
 
   return (
     <div id="cart-items-list"> {/* ✅ Required for test */}
