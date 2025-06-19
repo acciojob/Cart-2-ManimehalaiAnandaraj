@@ -8,7 +8,7 @@ const CartItem = ({ item }) => {
   return (
     <div>
       <h3>{item.name}</h3>
-      <p id={`cart-item-price-${item.id}`}>${item.price.toFixed(2)}</p>
+      <p id={`cart-items-price-${item.id}`}>${item.price.toFixed(2)}</p>
       <div>
         <button
           id={`decrement-btn-${item.id}`}

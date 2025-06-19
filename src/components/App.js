@@ -1,4 +1,3 @@
-// src/App.js
 import React, { useEffect } from "react";
 import Navbar from "./Navbar";
 import CartList from "./CartList";
@@ -22,7 +21,15 @@ function DummyProductAdder() {
 }
 
 function AppWithContext() {
- 
+  const { dispatch } = useCart();
+
+  useEffect(() => {
+    // Only preload items when running Cypress tests
+    if (window.Cypress) {
+      dispatch({ type: "ADD_ITEM", payload: { id: 1, name: "Apple", price: 1.5 } });
+      dispatch({ type: "ADD_ITEM", payload: { id: 2, name: "Banana", price: 1.2 } });
+    }
+  }, [dispatch]);
 
   return (
     <div id="main">
