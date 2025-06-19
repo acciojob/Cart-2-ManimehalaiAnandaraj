@@ -20,7 +20,7 @@ const CartItem = ({ item }) => {
 <span id={`cart-amount-${item.id}`}>{item.quantity}</span>
 <button
   id={`increment-btn-${item.id}`}
-  onClick={() => dispatch({ type: "INCREMENT", payload: item })}
+  onClick={() => dispatch({ type: "INCREMENT", payload: item.id })}
 >
   +
 </button>
