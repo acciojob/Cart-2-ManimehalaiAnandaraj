@@ -10,7 +10,7 @@ const CartItem = ({ item }) => {
       <h3>{item.name}</h3>
       <p id={`cart-items-price-${item.id}`}>${item.price.toFixed(2)}</p>
       <div>
-       // CartItem.js button IDs updated to expected ones by the tests
+       
 <button
   id={`decrement-btn-${item.id}`}
   onClick={() => dispatch({ type: "DECREMENT", payload: item.id })}

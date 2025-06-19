@@ -16,10 +16,15 @@ const cartReducer = (state, action) => {
   } else {
     return {
       ...state,
-      cartItems: [...state.cartItems, { ...action.payload, quantity: 1 }],
+      cartItems: [
+        ...state.cartItems,
+        {
+          ...action.payload,
+          quantity: action.payload.quantity || 1, // ✅ use explicit quantity if passed
+        },
+      ],
     };
   }
-
 
     case "INCREMENT":
       return {
