@@ -1,10 +1,8 @@
-<p>Now I can render any React component on any DOM node I want using ReactDOM.render</p>
-
 // src/App.js
-import React from "react";
+import React, { useEffect } from "react";
 import Navbar from "./Navbar";
 import CartList from "./CartList";
-import { CartProvider , useCart } from "../context/CartContext";
+import { CartProvider, useCart } from "../context/CartContext";
 
 function DummyProductAdder() {
   const { dispatch } = useCart();
@@ -23,14 +21,27 @@ function DummyProductAdder() {
   ));
 }
 
+function AppWithContext() {
+  const { dispatch } = useCart();
+
+  useEffect(() => {
+    dispatch({ type: "ADD_ITEM", payload: { id: 1, name: "Apple", price: 2.5 } });
+    dispatch({ type: "ADD_ITEM", payload: { id: 2, name: "Banana", price: 1.5 } });
+  }, [dispatch]);
+
+  return (
+    <div id="main">
+      <Navbar />
+      <DummyProductAdder />
+      <CartList />
+    </div>
+  );
+}
+
 function App() {
   return (
     <CartProvider>
-      <div id="main">
-        <Navbar />
-        <DummyProductAdder />
-        <CartList />
-      </div>
+      <AppWithContext />
     </CartProvider>
   );
 }

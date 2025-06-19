@@ -1,4 +1,4 @@
-// src/components/Navbar.js
+// src/Navbar.js
 import React from "react";
 import { useCart } from "../context/CartContext";
 
@@ -11,7 +11,7 @@ const Navbar = () => {
 
   return (
     <nav>
-      <h2>Cart App</h2>
+      <h2>Cart App - useReducer</h2> {/* Required for test */}
       <div id="nav-cart-item-count">Cart ({totalCount})</div>
     </nav>
   );

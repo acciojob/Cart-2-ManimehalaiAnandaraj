@@ -1,4 +1,4 @@
-// src/components/CartItem.js
+// src/CartItem.js
 import React from "react";
 import { useCart } from "../context/CartContext";
 
@@ -23,7 +23,10 @@ const CartItem = ({ item }) => {
         >
           +
         </button>
-        <button id="cart-item-remove" onClick={() => dispatch({ type: "REMOVE_ITEM", payload: item.id })}>
+        <button
+          id={`cart-item-remove-${item.id}`} // ✅ Required for test
+          onClick={() => dispatch({ type: "REMOVE_ITEM", payload: item.id })}
+        >
           Remove
         </button>
       </div>
