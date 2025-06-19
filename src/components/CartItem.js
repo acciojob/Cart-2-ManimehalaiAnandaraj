@@ -15,14 +15,14 @@ const CartItem = ({ item }) => {
   id={`decrement-btn-${item.id}`}
   onClick={() => dispatch({ type: "DECREMENT", payload: item.id })}
 >
-  -
+  Decrement
 </button>
 <span id={`cart-amount-${item.id}`}>{item.quantity}</span>
 <button
   id={`increment-btn-${item.id}`}
   onClick={() => dispatch({ type: "INCREMENT", payload: item.id })}
 >
-  +
+  Increment
 </button>
 <button
   id={`cart-item-remove-${item.id}`}
