@@ -5,9 +5,10 @@ import { CartProvider, useCart } from "../context/CartContext";
 
 function DummyProductAdder() {
   const { dispatch } = useCart();
+  // Prices match the ones used in useEffect below
   const dummyProducts = [
-    { id: 1, name: "Apple", price: 2.5 },
-    { id: 2, name: "Banana", price: 1.5 },
+    { id: 1, name: "Apple", price: 1.5 },
+    { id: 2, name: "Banana", price: 1.2 },
   ];
 
   return dummyProducts.map(product => (
