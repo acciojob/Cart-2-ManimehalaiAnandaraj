@@ -26,7 +26,7 @@ function AppWithContext() {
 
   useEffect(() => {
   if (window.Cypress) {
-    dispatch({ type: "CLEAR_CART" }); // 🔁 Always reset state first
+    dispatch({ type: "CLEAR_CART" }); // ✅ Ensure clean start
     dispatch({
       type: "ADD_ITEM",
       payload: { id: 1, name: "Apple", price: 1.5, quantity: 1 },
@@ -37,6 +37,7 @@ function AppWithContext() {
     });
   }
 }, [dispatch]);
+
 
 
   return (
