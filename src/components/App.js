@@ -24,7 +24,7 @@ function DummyProductAdder() {
 function AppWithContext() {
   const { dispatch } = useCart();
 
-  useEffect(() => {
+ useEffect(() => {
   dispatch({ type: "ADD_ITEM", payload: { id: 1, name: "Apple", price: 1.5 } });
   dispatch({ type: "ADD_ITEM", payload: { id: 2, name: "Banana", price: 1.2 } });
 }, []);

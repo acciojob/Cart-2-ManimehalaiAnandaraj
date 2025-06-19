@@ -1,4 +1,4 @@
-// src/CartList.js
+// CartList.js
 import React from "react";
 import { useCart } from "../context/CartContext";
 import CartItem from "./CartItem";
@@ -14,15 +14,13 @@ const CartList = () => {
     0
   );
 
- {cartItems.length === 0 ? (
-  <h2>Cart is currently empty</h2> // ✅ Good for empty state
-) : (
-  <div id="cart-items-list"> ... </div>
-)}
-
+  // ✅ DO NOT render the #cart-items-list if the cart is empty
+  if (cartItems.length === 0) {
+    return <h2>Cart is currently empty</h2>;
+  }
 
   return (
-    <div id="cart-items-list"> {/* ✅ Required for test */}
+    <div id="cart-items-list">
       {cartItems.map(item => (
         <CartItem key={item.id} item={item} />
       ))}
