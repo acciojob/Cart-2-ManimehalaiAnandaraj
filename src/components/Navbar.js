@@ -1,19 +1,22 @@
+// Navbar.js
 import React from "react";
 import { useCart } from "../context/CartContext";
 
-function Navbar() {
+const Navbar = () => {
   const {
     state: { cartItems },
   } = useCart();
 
-  const itemCount = cartItems.reduce((acc, item) => acc + item.quantity, 0);
+  const totalCount = cartItems.reduce((sum, item) => sum + item.quantity, 0);
 
   return (
     <nav>
-      <h3>Cart (<span id="nav-cart-item-count">{itemCount}</span>)</h3>
-      <p>useReducer</p>
+      <h1>useReducer</h1>
+      <div>
+        <span id="nav-cart-item-count">Cart ({totalCount})</span>
+      </div>
     </nav>
   );
-}
+};
 
 export default Navbar;
