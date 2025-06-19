@@ -1,4 +1,3 @@
-// Navbar.js
 import React from "react";
 import { useCart } from "../context/CartContext";
 
@@ -11,7 +10,8 @@ function Navbar() {
 
   return (
     <nav>
-      <h3>Cart ({itemCount})</h3> {/* ✅ Must be exactly like this */}
+      <h3>Cart (<span id="nav-cart-item-count">{itemCount}</span>)</h3>
+      <p>useReducer</p>
     </nav>
   );
 }
